@@ -1,0 +1,568 @@
+.showcaseWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-image: url('/inventory.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-main);
+  background-color: #050a15;
+}
+
+.topBar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.headerTitle {
+  font-family: "Upakarti Serong", serif;
+  font-size: 2.5rem;
+  color: #fde047;
+  /* Gold */
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.titleOrnament {
+  font-size: 1.5rem;
+  color: rgba(253, 224, 71, 0.7);
+}
+
+.topRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.currency {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.currencyIcon {
+  width: 20px;
+  height: 20px;
+  background-color: #f43f5e;
+  /* Red gem placeholder */
+  border-radius: 4px;
+  transform: rotate(45deg);
+}
+
+.currencyIcon.gold {
+  background-color: #fbbf24;
+  /* Gold coin placeholder */
+  border-radius: 50%;
+  transform: none;
+}
+
+.exitBtn {
+  background: transparent;
+  border: 1px solid rgba(253, 224, 71, 0.5);
+  color: #fde047;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.exitBtn:hover {
+  background: rgba(253, 224, 71, 0.2);
+}
+
+.filters {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  gap: 30px;
+  padding: 0 60px;
+  margin-top: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.filterBtn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.1rem;
+  padding: 10px 0;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.filterBtn:hover,
+.filterBtn.active {
+  color: #fde047;
+}
+
+.filterBtn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #fde047, transparent);
+}
+
+/* CAROUSEL */
+.carouselContainer {
+  position: relative;
+  z-index: 10;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.carouselTrack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardItem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  /* Removing overflow: hidden and bg for 3D preserve */
+  /* The layout transitions */
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
+    width 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
+    height 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
+    opacity 0.5s ease,
+    filter 0.5s ease;
+  transform-origin: center center;
+  perspective: 1200px;
+}
+
+.cardItem.active {}
+
+.cardItem.inactive {
+  filter: grayscale(40%) brightness(0.6);
+  cursor: pointer;
+}
+
+.cardItem.inactive:hover {
+  filter: grayscale(0%) brightness(0.9);
+}
+
+.cardHeader {
+  text-align: center;
+  padding: 15px 10px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 2px 4px #000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cardImageWrapper {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.cardStats {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 60px 15px 15px;
+  background: linear-gradient(to top, #11151c 30%, transparent 100%);
+  color: white;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.statValue {
+  color: #fff;
+  font-weight: bold;
+}
+
+.stars {
+  color: #fde047;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+/* Specific colors for rarity frames if needed */
+.cardItem[data-rarity="SSR"].active .cardFront {
+  border-color: #f59e0b;
+}
+
+.cardItem[data-rarity="SR"].active .cardFront {
+  border-color: #a855f7;
+}
+
+.cardItem[data-rarity="R"].active .cardFront {
+  border-color: #3b82f6;
+}
+
+/* 3D FLIPPING STYLES */
+.flipWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: cardFlip 6s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+@keyframes cardFlip {
+
+  0%,
+  35% {
+    transform: rotateY(0deg);
+  }
+
+  50%,
+  85% {
+    transform: rotateY(180deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+}
+
+.cardFront {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardBack {
+  transform: rotateY(180deg);
+  background-image: url('/images/card_background.png');
+  background-size: cover;
+  background-position: center;
+  border: 4px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(253, 224, 71, 0.5);
+  color: #fde047;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.2s;
+  backdrop-filter: blur(5px);
+}
+
+.navBtn:hover {
+  background: rgba(253, 224, 71, 0.2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prevBtn {
+  left: 20px;
+}
+
+.nextBtn {
+  right: 20px;
+}
+
+/* The Shader Stuff */
+.shader {
+  position: relative;
+  overflow: hidden;
+  backface-visibility: hidden;
+  /* Forces GPU */
+}
+
+.shaderLayer {
+  background: black;
+  mix-blend-mode: multiply;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.specular {
+  mix-blend-mode: color-dodge;
+  background-attachment: fixed;
+  opacity: 0.25;
+  /* Reduced even further */
+}
+
+.gradientLegendary {
+  background-image: linear-gradient(0deg,
+      hsl(359, 60%, 40%),
+      hsl(16, 60%, 45%),
+      hsl(33, 60%, 50%),
+      hsl(45, 60%, 55%),
+      hsl(58, 60%, 60%),
+      hsl(58, 60%, 65%),
+      hsl(58, 60%, 70%),
+      hsl(96, 60%, 65%),
+      hsl(146, 60%, 60%),
+      hsl(183, 60%, 55%),
+      hsl(225, 60%, 50%),
+      hsl(265, 60%, 45%),
+      hsl(303, 60%, 40%));
+  opacity: 0.45;
+}
+
+.gradientEpic {
+  background-image: linear-gradient(135deg,
+      hsl(260, 80%, 40%) 0%,
+      hsl(280, 80%, 60%) 30%,
+      hsl(200, 80%, 70%) 50%,
+      hsl(280, 80%, 60%) 70%,
+      hsl(260, 80%, 40%) 100%);
+  opacity: 0.30;
+}
+
+.shiningCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.1) 45%,
+      rgba(255, 255, 255, 0.8) 50%,
+      rgba(255, 255, 255, 0.1) 55%,
+      transparent 60%);
+  transform: translateY(-100%);
+  animation: shineSweepFast 3s ease-in-out infinite;
+  mix-blend-mode: overlay;
+}
+
+@keyframes shineSweepFast {
+  0% {
+    transform: translateY(-120%);
+  }
+
+  25% {
+    transform: translateY(120%);
+  }
+
+  100% {
+    transform: translateY(120%);
+  }
+}
+
+/* Offset-based positioning for desktop */
+.cardItem[data-offset="0"] {
+  transform: translate(-50%, -50%);
+  width: 440px;
+  height: 700px;
+  opacity: 1;
+  z-index: 30;
+}
+
+.cardItem[data-offset="1"] {
+  transform: translate(calc(-50% + 360px), -50%);
+  width: 220px;
+  height: 360px;
+  opacity: 0.8;
+  z-index: 20;
+}
+
+.cardItem[data-offset="-1"] {
+  transform: translate(calc(-50% - 360px), -50%);
+  width: 220px;
+  height: 360px;
+  opacity: 0.8;
+  z-index: 20;
+}
+
+.cardItem[data-offset="2"] {
+  transform: translate(calc(-50% + 600px), -50%);
+  width: 220px;
+  height: 360px;
+  opacity: 0.4;
+  z-index: 10;
+}
+
+.cardItem[data-offset="-2"] {
+  transform: translate(calc(-50% - 600px), -50%);
+  width: 220px;
+  height: 360px;
+  opacity: 0.4;
+  z-index: 10;
+}
+
+.cardItem[data-offset="out-right"] {
+  transform: translate(calc(-50% + 900px), -50%);
+  width: 220px;
+  height: 360px;
+  opacity: 0;
+  z-index: 0;
+}
+
+.cardItem[data-offset="out-left"] {
+  transform: translate(calc(-50% - 900px), -50%);
+  width: 220px;
+  height: 360px;
+  opacity: 0;
+  z-index: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .topBar {
+    padding: 15px 20px;
+  }
+
+  .headerTitle {
+    font-size: 1.8rem;
+  }
+
+  .titleOrnament {
+    display: none;
+  }
+
+  .filters {
+    padding: 0 15px;
+    gap: 15px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .filterBtn {
+    font-size: 0.95rem;
+    flex-shrink: 0;
+  }
+
+  /* Adjust navigation buttons */
+  .navBtn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .prevBtn {
+    left: 10px;
+  }
+
+  .nextBtn {
+    right: 10px;
+  }
+
+  /* Scale down cards for mobile */
+  .cardItem[data-offset="0"] {
+    width: 280px;
+    height: 440px;
+  }
+
+  .cardItem[data-offset="1"] {
+    width: 140px;
+    height: 220px;
+    transform: translate(calc(-50% + 180px), -50%);
+  }
+
+  .cardItem[data-offset="-1"] {
+    width: 140px;
+    height: 220px;
+    transform: translate(calc(-50% - 180px), -50%);
+  }
+
+  .cardItem[data-offset="2"] {
+    width: 140px;
+    height: 220px;
+    transform: translate(calc(-50% + 300px), -50%);
+  }
+
+  .cardItem[data-offset="-2"] {
+    width: 140px;
+    height: 220px;
+    transform: translate(calc(-50% - 300px), -50%);
+  }
+
+  .cardStats {
+    padding: 40px 10px 10px;
+  }
+
+  .statRow {
+    font-size: 0.75rem;
+  }
+
+  .cardHeader {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+}

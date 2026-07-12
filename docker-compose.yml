@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: gacha-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: gachadb
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  minio:
+    image: minio/minio
+    container_name: gacha-minio
+    environment:
+      MINIO_ROOT_USER: galih
+      MINIO_ROOT_PASSWORD: galihraka123
+    command: server /data --console-address ":9001"
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - miniodata:/data
+    restart: unless-stopped
+
+  redis:
+    image: eqalpha/keydb:latest
+    container_name: gacha-redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+  app:
+    build: .
+    container_name: gacha-app
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:password@db:5432/gachadb?schema=public
+      - MINIO_ENDPOINT=minio
+      - MINIO_PORT=9000
+      - MINIO_USE_SSL=false
+      - MINIO_ACCESS_KEY=galih
+      - MINIO_SECRET_KEY=galihraka123
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - db
+      - minio
+      - redis
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+  miniodata:

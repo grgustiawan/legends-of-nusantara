@@ -1,0 +1,147 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-bg-primary);
+}
+
+.videoBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.videoOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to top, rgba(2, 5, 0, 0.9), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  z-index: 1;
+}
+
+.aurora {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.heroSection {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+}
+
+.logoContainer {
+  margin-top: 40svh;
+  margin-bottom: -140px;
+  text-align: center;
+  z-index: 3;
+  position: relative;
+}
+
+.logoImage {
+  max-width: 170px;
+  height: auto;
+  filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.8));
+  /* if we want it to overlap the frame slightly */
+  margin-bottom: -40px;
+}
+
+.loginBox {
+  width: 550px;
+  height: 650px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.9)) contrast(1.2) brightness(0.8);
+}
+
+.formContent {
+  width: 100%;
+  padding: 0 140px;
+  margin-top: 10px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px 15px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.input:focus {
+  border-color: #8b6e45;
+  background: rgba(30, 30, 30, 0.9);
+}
+
+.loginBtn {
+  width: 160px;
+  height: 160px;
+  background-image: url('/button.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.loginBtn:hover {
+  transform: translateX(-50%) scale(1.05);
+  filter: brightness(1.2) drop-shadow(0 0 10px rgba(0, 150, 255, 0.5));
+}
+
+.adminLink {
+  margin-top: 25px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
+
+.adminLink a:hover {
+  color: white;
+  text-decoration: underline;
+}

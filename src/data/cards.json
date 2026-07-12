@@ -1,0 +1,902 @@
+[
+  {
+    "id": 1,
+    "title": "Hayam Wuruk",
+    "rarity": "SSR",
+    "rarityLabel": "legendaris",
+    "category": "Karakter",
+    "lore": "Raja termasyhur yang membawa Majapahit ke puncak kejayaan pada abad ke-14, dipuja sebagai pemersatu Nusantara.",
+    "imagePath": "/images/01_Hayam_Wuruk.jpeg"
+  },
+  {
+    "id": 2,
+    "title": "Gajah Mada",
+    "rarity": "SSR",
+    "rarityLabel": "legendary",
+    "category": "Karakter",
+    "lore": "Mahapatih legendaris pengucap Sumpah Palapa, dikenal karena tekadnya menyatukan seluruh Nusantara di bawah Majapahit.",
+    "imagePath": "/images/02_Gajah_Mada.jpeg"
+  },
+  {
+    "id": 3,
+    "title": "Ken Arok",
+    "rarity": "SSR",
+    "rarityLabel": "legendary",
+    "category": "Karakter",
+    "lore": "Pendiri Kerajaan Singhasari yang naik dari rakyat jelata menjadi raja lewat keberanian dan keris sakti Empu Gandring.",
+    "imagePath": "/images/03_Ken_Arok.jpeg"
+  },
+  {
+    "id": 4,
+    "title": "Nyi Roro Kidul",
+    "rarity": "SSR",
+    "rarityLabel": "legendary",
+    "category": "Karakter",
+    "lore": "Ratu gaib penguasa Samudra Hindia di selatan Jawa, dipercaya menjalin hubungan mistis dengan raja-raja Mataram.",
+    "imagePath": "/images/04_Nyi_Roro_Kidul.jpeg"
+  },
+  {
+    "id": 5,
+    "title": "Prabu Siliwangi",
+    "rarity": "SSR",
+    "rarityLabel": "legendary",
+    "category": "Karakter",
+    "lore": "Raja agung Pajajaran yang menurut legenda dapat berubah wujud menjadi harimau putih penjaga tanah Sunda.",
+    "imagePath": "/images/05_Prabu_Siliwangi.jpeg"
+  },
+  {
+    "id": 6,
+    "title": "Garuda",
+    "rarity": "SSR",
+    "rarityLabel": "legendary",
+    "category": "Makhluk Mitologi",
+    "lore": "Burung mitologi raksasa lambang negara, dipercaya sebagai tunggangan Dewa Wisnu dan simbol kekuatan Nusantara.",
+    "imagePath": "/images/06_Garuda.jpeg"
+  },
+  {
+    "id": 7,
+    "title": "Rahwana",
+    "rarity": "SSR",
+    "rarityLabel": "legendary",
+    "category": "Karakter",
+    "lore": "Raja raksasa Alengka berkepala sepuluh, penculik Dewi Shinta yang menjadi musuh utama dalam kisah Ramayana.",
+    "imagePath": "/images/07_Rahwana.jpeg"
+  },
+  {
+    "id": 8,
+    "title": "Calon Arang",
+    "rarity": "SSR",
+    "rarityLabel": "legendary",
+    "category": "Karakter",
+    "lore": "Wanita sakti penguasa ilmu hitam dari Kediri, ditakuti karena kemampuannya menyebarkan wabah dengan ilmu leak.",
+    "imagePath": "/images/08_Calon_Arang.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Gatotkaca",
+    "rarity": "SSR",
+    "rarityLabel": "legendary",
+    "category": "Karakter",
+    "lore": "Kesatria sakti berkulit kebal senjata dan mampu terbang, putra Bima yang menjadi pahlawan perang Baratayuda.",
+    "imagePath": "/images/09_Gatotkaca.jpeg"
+  },
+  {
+    "id": 10,
+    "title": "Hanoman",
+    "rarity": "SSR",
+    "rarityLabel": "legendary",
+    "category": "Karakter",
+    "lore": "Kera putih sakti mandraguna, utusan setia Rama yang membakar Alengka dan mampu memperbesar tubuhnya.",
+    "imagePath": "/images/10_Hanoman.jpeg"
+  },
+  {
+    "id": 11,
+    "title": "Dewi Sri",
+    "rarity": "SSR",
+    "rarityLabel": "legendary",
+    "category": "Karakter",
+    "lore": "Dewi padi dan kesuburan yang dipuja di seluruh Nusantara, dipercaya menjelma dari putri kayangan yang wafat.",
+    "imagePath": "/images/11_Dewi_Sri.jpeg"
+  },
+  {
+    "id": 12,
+    "title": "Barong",
+    "rarity": "SSR",
+    "rarityLabel": "legendary",
+    "category": "Makhluk Mitologi",
+    "lore": "Makhluk mitologi Bali berwujud singa raksasa, pelindung kebaikan yang selalu bertarung melawan Rangda sang penguasa kejahatan.",
+    "imagePath": "/images/12_Barong.jpeg"
+  },
+  {
+    "id": 13,
+    "title": "Airlangga",
+    "rarity": "SSR",
+    "rarityLabel": "legendary",
+    "category": "Karakter",
+    "lore": "Raja yang berhasil membangun kembali kerajaan dari reruntuhan Medang dan dikenal bijaksana serta mendekati sufi di akhir hayat.",
+    "imagePath": "/images/13_Airlangga.jpeg"
+  },
+  {
+    "id": 14,
+    "title": "Raden Wijaya",
+    "rarity": "SSR",
+    "rarityLabel": "legendary",
+    "category": "Karakter",
+    "lore": "Pendiri Kerajaan Majapahit yang cerdik mengalahkan pasukan Mongol dengan siasat licik di hutan Tarik.",
+    "imagePath": "/images/14_Raden_Wijaya.jpeg"
+  },
+  {
+    "id": 15,
+    "title": "Keris Empu Gandring",
+    "rarity": "SSR",
+    "rarityLabel": "legendary",
+    "category": "Senjata Pusaka",
+    "lore": "Keris sakti karya Empu Gandring yang menurut legenda membawa kutukan kematian bagi tujuh generasi penggunanya.",
+    "imagePath": "/images/15_Keris_Empu_Gandring.jpeg"
+  },
+  {
+    "id": 16,
+    "title": "Gayatri Rajapatni",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Permaisuri Raden Wijaya yang menjadi bhiksuni dan tokoh bijak di balik kejayaan Majapahit generasi berikutnya.",
+    "imagePath": "/images/16_Gayatri_Rajapatni.jpeg"
+  },
+  {
+    "id": 17,
+    "title": "Tribhuwana Wijayatunggadewi",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Ratu Majapahit yang mengangkat Gajah Mada sebagai mahapatih dan menyaksikan lahirnya Sumpah Palapa.",
+    "imagePath": "/images/17_Tribhuwana_Wijayatunggadewi.jpeg"
+  },
+  {
+    "id": 18,
+    "title": "Dyah Pitaloka Citraresmi",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Putri Sunda yang wafat tragis dalam peristiwa Perang Bubat, dikenang sebagai simbol kesucian dan pengorbanan.",
+    "imagePath": "/images/18_Dyah_Pitaloka_Citraresmi.jpeg"
+  },
+  {
+    "id": 19,
+    "title": "Adityawarman",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Bangsawan Majapahit keturunan Melayu yang kemudian menjadi raja besar di Sumatra bagian tengah.",
+    "imagePath": "/images/19_Adityawarman.jpeg"
+  },
+  {
+    "id": 20,
+    "title": "Ken Dedes",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Wanita cantik luar biasa yang dipercaya memancarkan cahaya dari balik kainnya, menjadi awal mula garis keturunan raja-raja Jawa.",
+    "imagePath": "/images/20_Ken_Dedes.jpeg"
+  },
+  {
+    "id": 21,
+    "title": "Anusapati",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Putra Ken Dedes yang membalaskan dendam ayahnya dengan keris kutukan yang sama, mewarisi lingkaran dendam keluarga.",
+    "imagePath": "/images/21_Anusapati.jpeg"
+  },
+  {
+    "id": 22,
+    "title": "Kertanegara",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Raja terakhir Singhasari yang ambisius memperluas kekuasaan hingga Ekspedisi Pamalayu sebelum jatuh oleh pemberontakan.",
+    "imagePath": "/images/22_Kertanegara.jpeg"
+  },
+  {
+    "id": 23,
+    "title": "Balaputradewa",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Raja Sriwijaya yang membawa kejayaan maritim dan menjadikan Sriwijaya pusat pendidikan Buddha terbesar di Asia Tenggara.",
+    "imagePath": "/images/23_Balaputradewa.jpeg"
+  },
+  {
+    "id": 24,
+    "title": "Dapunta Hyang Sri Jayanasa",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Pendiri Kerajaan Sriwijaya yang memimpin ekspedisi suci dengan ribuan pasukan mendirikan kerajaan maritim pertama Nusantara.",
+    "imagePath": "/images/24_Dapunta_Hyang_Sri_Jayanasa.jpeg"
+  },
+  {
+    "id": 25,
+    "title": "Sangkuriang",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Pemuda yang tanpa sadar jatuh cinta pada ibunya sendiri, dan dalam amarahnya menendang perahu hingga terbalik menjadi gunung.",
+    "imagePath": "/images/25_Sangkuriang.jpeg"
+  },
+  {
+    "id": 26,
+    "title": "Dayang Sumbi",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Putri cantik yang dikutuk mengasingkan diri, ibunda Sangkuriang dalam kisah tragis penuh misteri Tanah Sunda.",
+    "imagePath": "/images/26_Dayang_Sumbi.jpeg"
+  },
+  {
+    "id": 27,
+    "title": "Roro Jonggrang",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Putri yang menolak lamaran Bandung Bondowoso dengan syarat mustahil, akhirnya dikutuk menjadi arca candi keseribu.",
+    "imagePath": "/images/27_Roro_Jonggrang.jpeg"
+  },
+  {
+    "id": 28,
+    "title": "Bandung Bondowoso",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Kesatria sakti yang dibantu jin membangun seribu candi dalam semalam demi memenangkan hati Roro Jonggrang.",
+    "imagePath": "/images/28_Bandung_Bondowoso.jpeg"
+  },
+  {
+    "id": 29,
+    "title": "Rakai Pikatan",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Raja Mataram Kuno yang menikahi Pramodhawardhani dan membangun Candi Prambanan sebagai mahakarya arsitektur Hindu.",
+    "imagePath": "/images/29_Rakai_Pikatan.jpeg"
+  },
+  {
+    "id": 30,
+    "title": "Damar Wulan",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Pemuda sederhana yang berhasil mengalahkan Menak Jinggo dan menjadi raja Majapahit berkat kecerdikan dan keberaniannya.",
+    "imagePath": "/images/30_Damar_Wulan.jpeg"
+  },
+  {
+    "id": 31,
+    "title": "Menak Jinggo",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Adipati Blambangan yang gagah namun memberontak terhadap Majapahit, akhirnya tewas di tangan Damar Wulan.",
+    "imagePath": "/images/31_Menak_Jinggo.jpeg"
+  },
+  {
+    "id": 32,
+    "title": "Panji Asmarabangun",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Pangeran Jenggala yang mengembara mencari kekasihnya Dewi Sekartaji, kisahnya menjadi legenda cinta abadi Jawa.",
+    "imagePath": "/images/32_Panji_Asmarabangun.jpeg"
+  },
+  {
+    "id": 33,
+    "title": "Dewi Sekartaji",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Putri Kediri kekasih Panji yang dalam pengembaraannya menyamar demi menemukan cintanya kembali, simbol kesetiaan.",
+    "imagePath": "/images/33_Dewi_Sekartaji.jpeg"
+  },
+  {
+    "id": 34,
+    "title": "Bima",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Kesatria Pandawa paling kuat dan jujur, dikenal dengan kuku pancanaka saktinya dan sifat berani tanpa kompromi.",
+    "imagePath": "/images/34_Bima.jpeg"
+  },
+  {
+    "id": 35,
+    "title": "Arjuna",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Kesatria Pandawa tertampan dan pemanah terbaik, pemilik busur pusaka Pasopati dalam kisah Baratayuda.",
+    "imagePath": "/images/35_Arjuna.jpeg"
+  },
+  {
+    "id": 36,
+    "title": "Kresna",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Titisan Dewa Wisnu yang menjadi penasihat Pandawa, dikenal karena kebijaksanaan dan kesaktian cakra Sudarsana.",
+    "imagePath": "/images/36_Kresna.jpeg"
+  },
+  {
+    "id": 37,
+    "title": "Srikandi",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Kesatria wanita Pandawa yang gagah berani, pembunuh Bisma dalam perang Baratayuda dengan keahlian memanahnya.",
+    "imagePath": "/images/37_Srikandi.jpeg"
+  },
+  {
+    "id": 38,
+    "title": "Rangda",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Ratu roh jahat dalam mitologi Bali, musuh abadi Barong yang melambangkan kekuatan kegelapan dan sihir hitam.",
+    "imagePath": "/images/38_Rangda.jpeg"
+  },
+  {
+    "id": 39,
+    "title": "Putri Ikan Danau Toba",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Wanita jelmaan ikan mas ajaib yang menjadi asal-usul terbentuknya Danau Toba setelah suaminya mengingkari janji.",
+    "imagePath": "/images/39_Putri_Ikan_Danau_Toba.jpeg"
+  },
+  {
+    "id": 40,
+    "title": "Sugriwa",
+    "rarity": "SR",
+    "rarityLabel": "epic",
+    "category": "Karakter",
+    "lore": "Raja kera sekutu Rama yang membantu penyerbuan Alengka, adik dari Subali dalam kisah perebutan takhta Kiskenda.",
+    "imagePath": "/images/40_Sugriwa.jpeg"
+  },
+  {
+    "id": 41,
+    "title": "Nakula",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Kesatria Pandawa kembar yang ahli dalam ilmu pedang dan merawat kuda, dikenal karena ketampanan dan kesetiaannya.",
+    "imagePath": "/images/41_Nakula.jpeg"
+  },
+  {
+    "id": 42,
+    "title": "Sadewa",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Kesatria Pandawa kembar yang bijaksana dan memiliki kemampuan menujum masa depan, penasihat spiritual Pandawa.",
+    "imagePath": "/images/42_Sadewa.jpeg"
+  },
+  {
+    "id": 43,
+    "title": "Yudhistira",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Sulung Pandawa yang jujur dan bijaksana, pemegang pusaka Kalimasada yang menjadi lambang kebenaran.",
+    "imagePath": "/images/43_Yudhistira.jpeg"
+  },
+  {
+    "id": 44,
+    "title": "Drupadi",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Istri kelima Pandawa yang kehormatannya dipertaruhkan dalam permainan dadu, simbol keteguhan wanita dalam Mahabharata.",
+    "imagePath": "/images/44_Drupadi.jpeg"
+  },
+  {
+    "id": 45,
+    "title": "Karna",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Kesatria sakti putra Batara Surya yang bertarung di pihak Kurawa meski hatinya berpihak pada Pandawa.",
+    "imagePath": "/images/45_Karna.jpeg"
+  },
+  {
+    "id": 46,
+    "title": "Duryudana",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Sulung seratus Kurawa yang ambisius, pemicu utama perang besar Baratayuda demi memperebutkan takhta Hastinapura.",
+    "imagePath": "/images/46_Duryudana.jpeg"
+  },
+  {
+    "id": 47,
+    "title": "Sengkuni",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Paman Kurawa yang licik dan pandai bersilat lidah, dalang di balik permainan dadu yang memicu perang besar.",
+    "imagePath": "/images/47_Sengkuni.jpeg"
+  },
+  {
+    "id": 48,
+    "title": "Semar",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Tokoh punakawan tertua dan paling sakti, penasihat rahasia para kesatria yang sesungguhnya adalah dewa menyamar.",
+    "imagePath": "/images/48_Semar.jpeg"
+  },
+  {
+    "id": 49,
+    "title": "Gareng",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Anak sulung Semar yang pincang namun jenaka, selalu menemani kesatria dengan candaan yang menghibur.",
+    "imagePath": "/images/49_Gareng.jpeg"
+  },
+  {
+    "id": 50,
+    "title": "Petruk",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Punakawan berhidung panjang yang cerdik dan lincah, sering menjadi penengah dengan akal-akalan uniknya.",
+    "imagePath": "/images/50_Petruk.jpeg"
+  },
+  {
+    "id": 51,
+    "title": "Bagong",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Punakawan bertubuh bulat yang polos dan jujur apa adanya, sering melontarkan kebenaran yang menohok.",
+    "imagePath": "/images/51_Bagong.jpeg"
+  },
+  {
+    "id": 52,
+    "title": "Rama",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Pangeran Ayodya titisan Wisnu yang gagah berani, menyelamatkan Shinta dari cengkeraman Rahwana di Alengka.",
+    "imagePath": "/images/52_Rama.jpeg"
+  },
+  {
+    "id": 53,
+    "title": "Shinta",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Istri Rama yang diculik Rahwana, simbol kesetiaan dan kesucian yang teruji lewat upacara Agni Pariksa.",
+    "imagePath": "/images/53_Shinta.jpeg"
+  },
+  {
+    "id": 54,
+    "title": "Kumbakarna",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Adik Rahwana yang raksasa namun berhati mulia, tetap berjuang membela negerinya meski tahu itu jalan yang salah.",
+    "imagePath": "/images/54_Kumbakarna.jpeg"
+  },
+  {
+    "id": 55,
+    "title": "Subali",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Raja kera Kiskenda yang sakti dengan Aji Pancasona, terusir dari kerajaannya oleh adiknya sendiri Sugriwa.",
+    "imagePath": "/images/55_Subali.jpeg"
+  },
+  {
+    "id": 56,
+    "title": "Ciung Wanara",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Pangeran Sunda yang dibesarkan di hutan bersama ayam sakti, akhirnya merebut kembali haknya sebagai raja.",
+    "imagePath": "/images/56_Ciung_Wanara.jpeg"
+  },
+  {
+    "id": 57,
+    "title": "Purbasari",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Putri Pasir Batang yang dikutuk berkulit hijau oleh kakaknya, kembali cantik berkat pertolongan Lutung Kasarung.",
+    "imagePath": "/images/57_Purbasari.jpeg"
+  },
+  {
+    "id": 58,
+    "title": "Lutung Kasarung",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Kera hitam yang sebenarnya titisan dewa, membantu Purbasari merebut kembali kerajaannya dari kakaknya yang licik.",
+    "imagePath": "/images/58_Lutung_kasarung.jpeg"
+  },
+  {
+    "id": 59,
+    "title": "Timun Mas",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Gadis ajaib yang lahir dari biji timun, melarikan diri dari kejaran raksasa Buto Ijo dengan senjata ajaib.",
+    "imagePath": "/images/59_Timun_Mas.jpeg"
+  },
+  {
+    "id": 60,
+    "title": "Buto Ijo",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Raksasa hijau raksasa yang mengejar Timun Mas untuk menagih janji orang tuanya, akhirnya terperangkap lautan lumpur.",
+    "imagePath": "/images/60_Buto_Ijo.jpeg"
+  },
+  {
+    "id": 61,
+    "title": "Jaka Tarub",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Pemuda yang mencuri selendang bidadari Nawang Wulan sehingga sang bidadari tak bisa kembali ke kayangan.",
+    "imagePath": "/images/61_Jaka_Tarub.jpeg"
+  },
+  {
+    "id": 62,
+    "title": "Nawang Wulan",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Bidadari yang terjebak di bumi setelah selendangnya dicuri, akhirnya kembali ke kayangan setelah menemukan selendangnya kembali.",
+    "imagePath": "/images/62_Nawang_Wulan.jpeg"
+  },
+  {
+    "id": 63,
+    "title": "Malin Kundang",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Anak nelayan yang durhaka pada ibunya setelah menjadi kaya raya, dikutuk menjadi batu di tepi pantai.",
+    "imagePath": "/images/63_Malin_Kundang.jpeg"
+  },
+  {
+    "id": 64,
+    "title": "Bawang Merah",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Saudara tiri yang licik dan iri hati dalam kisah Bawang Merah Bawang Putih, simbol keserakahan.",
+    "imagePath": "/images/64_Bawang_Merah.jpeg"
+  },
+  {
+    "id": 65,
+    "title": "Bawang Putih",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Gadis baik hati yang teraniaya namun akhirnya mendapat kebahagiaan berkat labu ajaib berisi harta karun.",
+    "imagePath": "/images/65_Bawang_Putih.jpeg"
+  },
+  {
+    "id": 66,
+    "title": "Keong Mas",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Putri Kediri yang dikutuk menjadi siput emas oleh sihir jahat, dibebaskan kembali menjadi manusia oleh cinta sejati.",
+    "imagePath": "/images/66_Keong_Mas.jpeg"
+  },
+  {
+    "id": 67,
+    "title": "Patih Nambi",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Patih pertama Majapahit yang setia mendampingi Raden Wijaya sejak masa perjuangan hingga berdirinya kerajaan.",
+    "imagePath": "/images/67_Patih_Nambi.jpeg"
+  },
+  {
+    "id": 68,
+    "title": "Adipati Ranggalawe",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Adipati Tuban yang gagah berani namun akhirnya memberontak terhadap Majapahit karena kekecewaan politik.",
+    "imagePath": "/images/68_Adipati_Ranggalawe.jpeg"
+  },
+  {
+    "id": 69,
+    "title": "Lembu Sora",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Panglima perang Majapahit yang gagah berani namun akhirnya menjadi korban fitnah politik istana.",
+    "imagePath": "/images/69_Lembu_Sora.jpeg"
+  },
+  {
+    "id": 70,
+    "title": "Empu Gandring",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Empu sakti pembuat keris legendaris yang kutukan kematiannya sendiri turut menjadi bagian dari legenda kerisnya.",
+    "imagePath": "/images/70_Empu_Gandring.jpeg"
+  },
+  {
+    "id": 71,
+    "title": "Batara Guru",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Dewa tertinggi dalam kosmologi wayang Jawa, pemimpin para dewa di Kahyangan Jonggring Salaka.",
+    "imagePath": "/images/71_Batara_Guru.jpeg"
+  },
+  {
+    "id": 72,
+    "title": "Batara Kala",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Dewa raksasa pemangsa waktu, momok penakut anak-anak dalam ritual ruwatan Jawa yang gemar memangsa mangsa sukerta.",
+    "imagePath": "/images/72_Batara_Kala.jpeg"
+  },
+  {
+    "id": 73,
+    "title": "Dewi Uma",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Karakter",
+    "lore": "Istri Batara Guru yang dikutuk menjadi Batari Durga akibat kemarahan suaminya, simbol dualitas cahaya dan kegelapan.",
+    "imagePath": "/images/73_Dewi_Uma.jpeg"
+  },
+  {
+    "id": 74,
+    "title": "Naga Antaboga",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Makhluk Mitologi",
+    "lore": "Naga raksasa penguasa dunia bawah yang dipercaya menopang bumi dalam kosmologi wayang Jawa.",
+    "imagePath": "/images/74_Naga_Antaboga.jpeg"
+  },
+  {
+    "id": 75,
+    "title": "Baru Klinthing",
+    "rarity": "R",
+    "rarityLabel": "rare",
+    "category": "Makhluk Mitologi",
+    "lore": "Naga jelmaan anak sakti yang dihina warga desa, kemarahannya menciptakan banjir besar yang membentuk Rawa Pening.",
+    "imagePath": "/images/75_Baru_Klinthing.jpeg"
+  },
+  {
+    "id": 76,
+    "title": "Prajurit Bhayangkara",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Karakter",
+    "lore": "Pasukan elite pengawal raja Majapahit, dikenal karena kedisiplinan dan kesetiaannya menjaga keraton Trowulan.",
+    "imagePath": "/images/76_Prajurit_Bhayangkara.jpeg"
+  },
+  {
+    "id": 77,
+    "title": "Prajurit Pajajaran",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Karakter",
+    "lore": "Prajurit setia Kerajaan Pajajaran yang menjaga kelestarian hutan dan wilayah kekuasaan Prabu Siliwangi.",
+    "imagePath": "/images/77_Prajurit_Pajajaran.jpeg"
+  },
+  {
+    "id": 78,
+    "title": "Nelayan Pantai Selatan",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Karakter",
+    "lore": "Nelayan sederhana dari pesisir selatan Jawa yang menghormati kekuasaan Nyi Roro Kidul di lautan.",
+    "imagePath": "/images/78_Nelayan_Pantai_Selatan.jpeg"
+  },
+  {
+    "id": 79,
+    "title": "Penari Bedhaya",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Karakter",
+    "lore": "Penari istana yang membawakan tarian sakral Bedhaya, dipercaya sebagai persembahan untuk Ratu Kidul.",
+    "imagePath": "/images/79_Penari_Bedhaya.jpeg"
+  },
+  {
+    "id": 80,
+    "title": "Dalang Wayang Kulit",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Karakter",
+    "lore": "Dalang yang menghidupkan kisah-kisah legenda lewat bayangan wayang kulit, penjaga tradisi lisan Nusantara.",
+    "imagePath": "/images/80_Dalang_Wayang_Kulit.jpeg"
+  },
+  {
+    "id": 81,
+    "title": "Pandai Besi Keris",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Karakter",
+    "lore": "Pengrajin keris terampil yang menempa senjata pusaka dengan doa dan ritual khusus di setiap tempaannya.",
+    "imagePath": "/images/81_Pandai_Besi_Keris.jpeg"
+  },
+  {
+    "id": 82,
+    "title": "Biksu Buddha Sriwijaya",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Karakter",
+    "lore": "Biksu dari pusat pendidikan Buddha Sriwijaya yang menjaga kitab-kitab suci dan ilmu pengetahuan kuno.",
+    "imagePath": "/images/82_Biksu_Buddha_Sriwijaya.jpeg"
+  },
+  {
+    "id": 83,
+    "title": "Pendeta Hindu Majapahit",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Karakter",
+    "lore": "Pendeta istana yang memimpin ritual keagamaan dan penasihat spiritual raja-raja Majapahit.",
+    "imagePath": "/images/83_Pendeta_Hindu_Majapahit.jpeg"
+  },
+  {
+    "id": 84,
+    "title": "Prajurit Kerajaan Kutai",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Karakter",
+    "lore": "Prajurit kerajaan Hindu tertua di Nusantara yang menjaga wilayah sepanjang Sungai Mahakam.",
+    "imagePath": "/images/84_Prajurit_Kerajaan_Kutai.jpeg"
+  },
+  {
+    "id": 85,
+    "title": "Putri Kerajaan Sunda",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Karakter",
+    "lore": "Putri bangsawan dari istana Pajajaran yang dikenal lemah lembut namun cerdas dalam strategi diplomasi.",
+    "imagePath": "/images/85_Putri_Kerajaan_Sunda.jpeg"
+  },
+  {
+    "id": 86,
+    "title": "Pengawal Keraton",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Karakter",
+    "lore": "Pengawal setia yang menjaga gerbang keraton siang dan malam tanpa kenal lelah.",
+    "imagePath": "/images/card_background.png"
+  },
+  {
+    "id": 87,
+    "title": "Pedagang Rempah Nusantara",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Karakter",
+    "lore": "Pedagang yang mengarungi lautan Nusantara membawa rempah-rempah berharga ke berbagai penjuru dunia.",
+    "imagePath": "/images/87_Pedagang_Rempah_Nusantara.jpeg"
+  },
+  {
+    "id": 88,
+    "title": "Peramal Istana",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Karakter",
+    "lore": "Peramal istana yang membaca pertanda alam dan bintang untuk memberi nasihat kepada raja.",
+    "imagePath": "/images/88_Peramal_Istana.jpeg"
+  },
+  {
+    "id": 89,
+    "title": "Punggawa Blambangan",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Karakter",
+    "lore": "Prajurit setia Kerajaan Blambangan yang menjaga wilayah paling timur Pulau Jawa dari berbagai ancaman.",
+    "imagePath": "/images/89_Punggawa_Blambangan.jpeg"
+  },
+  {
+    "id": 90,
+    "title": "Prajurit Wanita Bali Aga",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Karakter",
+    "lore": "Prajurit wanita dari desa Bali Aga yang menjaga tradisi leluhur dan wilayah pegunungan Bali kuno.",
+    "imagePath": "/images/90_Prajurit_Wanita_Bali_Aga.jpeg"
+  },
+  {
+    "id": 91,
+    "title": "Keris Nagasasra",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Senjata Pusaka",
+    "lore": "Keris pusaka legendaris berdapur naga bermahkota, dipercaya membawa kewibawaan dan perlindungan bagi pemiliknya.",
+    "imagePath": "/images/91_Keris_Nagasasra.jpeg"
+  },
+  {
+    "id": 92,
+    "title": "Keris Setan Kober",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Senjata Pusaka",
+    "lore": "Keris pusaka bermata dua yang menurut legenda digunakan dalam peristiwa berdarah perebutan kekuasaan.",
+    "imagePath": "/images/92_Keris_Setan_Kober.jpeg"
+  },
+  {
+    "id": 93,
+    "title": "Tombak Kyai Pleret",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Senjata Pusaka",
+    "lore": "Tombak pusaka kerajaan Mataram yang dipercaya membawa kekuatan spiritual dan legitimasi kekuasaan raja.",
+    "imagePath": "/images/93_Tombak_Kyai_Pleret.jpeg"
+  },
+  {
+    "id": 94,
+    "title": "Cupu Manik Astagina",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Senjata Pusaka",
+    "lore": "Wadah pusaka ajaib dalam kisah pewayangan yang dapat menampilkan berbagai dunia jika dibuka pemiliknya.",
+    "imagePath": "/images/94_Cupu_Manik_Astagina.jpeg"
+  },
+  {
+    "id": 95,
+    "title": "Trisula Batara Kala",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Senjata Pusaka",
+    "lore": "Senjata bermata tiga milik dewa waktu, melambangkan kekuatan menembus masa lalu, kini, dan masa depan.",
+    "imagePath": "/images/95_Trisula_Batara_Kala.jpeg"
+  },
+  {
+    "id": 96,
+    "title": "Kujang Sunda",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Senjata Pusaka",
+    "lore": "Senjata khas tanah Sunda berbentuk unik menyerupai huruf aksara, melambangkan kearifan dan kekuatan tanah Pasundan.",
+    "imagePath": "/images/96_Kujang_Sunda.jpeg"
+  },
+  {
+    "id": 97,
+    "title": "Rencong Aceh Pusaka",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Senjata Pusaka",
+    "lore": "Senjata tradisional Aceh berbentuk melengkung menyerupai huruf Arab, melambangkan keberanian dan kehormatan.",
+    "imagePath": "/images/97_Rencong_Aceh_Pusaka.jpeg"
+  },
+  {
+    "id": 98,
+    "title": "Mandau Dayak Pusaka",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Senjata Pusaka",
+    "lore": "Senjata tradisional Dayak yang dihiasi ukiran khas dan bulu burung enggang, melambangkan keberanian pendekar hutan.",
+    "imagePath": "/images/98_Mandau_Dayak_Pusaka.jpeg"
+  },
+  {
+    "id": 99,
+    "title": "Gong Nekara Perunggu",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Senjata Pusaka",
+    "lore": "Gong perunggu kuno peninggalan zaman megalitikum yang dipercaya dapat memanggil roh leluhur saat ditabuh.",
+    "imagePath": "/images/99_Gong_Nekara_Perunggu.jpeg"
+  },
+  {
+    "id": 100,
+    "title": "Mahkota Binokasih",
+    "rarity": "N",
+    "rarityLabel": "common",
+    "category": "Senjata Pusaka",
+    "lore": "Mahkota pusaka kerajaan Sunda Pajajaran yang menjadi lambang legitimasi dan kesucian kekuasaan raja-raja Sunda.",
+    "imagePath": "/images/100_Mahkota_Binokasih.jpeg"
+  }
+]

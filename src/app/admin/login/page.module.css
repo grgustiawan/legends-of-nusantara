@@ -1,0 +1,187 @@
+.container {
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  background-color: #0b0f19; /* Fallback */
+}
+
+.formWrapper {
+  width: 450px;
+  margin-left: 12%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.logoHighlight {
+  margin-left: 20px;
+  background: linear-gradient(90deg, #06b6d4, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tabsContainer {
+  display: flex;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.tab {
+  flex: 1;
+  padding: 15px 0;
+  text-align: center;
+  color: #94a3b8;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.tab.active {
+  color: #fff;
+  background: linear-gradient(90deg, #06b6d4, #4f46e5);
+  /* Cyan to deep blue/purple */
+  border-radius: 12px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+}
+
+/* Little speech bubble triangle below active tab */
+.tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid #207ba5;
+  /* Approximating the gradient color at that spot */
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.inputGroup {
+  position: relative;
+}
+
+.inputLabel {
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  background-color: #12182b;
+  /* Match typical dark background if inputs aren't completely transparent */
+  padding: 0 8px;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Transparent inputs for aesthetic */
+.inputGroup::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  width: 50px;
+  /* Width of the label to hide the border underneath */
+  height: 2px;
+  background: #111520;
+  /* Masking the border */
+  z-index: 5;
+}
+
+.input {
+  width: 100%;
+  padding: 16px 20px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.input:focus {
+  border-color: #06b6d4;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
+}
+
+.eyeIcon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 5px;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 18px;
+  margin-top: 15px;
+  background: linear-gradient(90deg, #4f46e5, #06b6d4);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 5px 25px rgba(6, 182, 212, 0.4);
+}
+
+.submitBtn:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 5px 35px rgba(6, 182, 212, 0.6);
+}
+
+.backLink {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.backLink a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.backLink a:hover {
+  color: #fff;
+}

@@ -1,0 +1,833 @@
+.pageContainer {
+  min-height: 100vh;
+  background-image: url('/gacha-screen.jpeg');
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  margin: 0 auto;
+  width: 90%;
+  position: relative;
+  z-index: 10;
+}
+
+.bannerSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+  margin-top: 40px;
+}
+
+.bannerImage {
+  width: 400px;
+  height: 580px;
+  border-radius: 16px;
+  border: 4px solid #fff;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.gachaButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.gachaBtn {
+  background: linear-gradient(180deg, #9b51e0, #6bb8f0);
+  border: 2px solid #fff;
+  border-radius: 8px;
+  color: white;
+  padding: 12px 24px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 180px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s;
+}
+
+.gachaBtn:hover {
+  transform: translateY(-2px);
+}
+
+.gachaBtn:active {
+  transform: translateY(1px);
+}
+
+.gachaBtn span {
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.pointIcon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: #ffaa00;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* Sections */
+.raritySection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.rarityTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titleS {
+  color: #f59e0b;
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+
+.titleA {
+  color: #ec4899;
+  text-shadow: 0 0 10px rgba(236, 72, 153, 0.5);
+}
+
+.titleB {
+  color: #a855f7;
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+.titleC {
+  color: #eab308;
+  text-shadow: 0 0 10px rgba(234, 179, 8, 0.5);
+}
+
+/* Grids */
+.gridS {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 600px;
+}
+
+.gridNormal {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .gridNormal {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .gridNormal {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gridS {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .bannerImage {
+    width: 300px;
+    height: 300px;
+  }
+
+  .gachaButtons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .gridNormal {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Card */
+.card {
+  background: #1a1a2e;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.cardS {
+  border-color: #f59e0b;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+}
+
+.cardA {
+  border-color: #ec4899;
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.2);
+}
+
+.cardB {
+  border-color: #a855f7;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+}
+
+.cardC {
+  border-color: #ffffff;
+  box-shadow: 0 0 15px rgba(234, 179, 8, 0.2);
+}
+
+.cardImageWrapper {
+  width: 100%;
+  aspect-ratio: 3/4;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardFooter {
+  padding: 8px;
+  background: #0f0f1a;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cardPoints {
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.footer {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-top: auto;
+}
+
+.footerLinks {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.footerLinks a:hover {
+  color: white;
+}
+
+/* Stacking */
+.cardStacked {
+  box-shadow:
+    4px 4px 0 #1a1a2e,
+    5px 5px 0 rgba(255, 255, 255, 0.5),
+    8px 8px 0 #1a1a2e,
+    9px 9px 0 rgba(255, 255, 255, 0.3) !important;
+  transform: translate(-4px, -4px);
+}
+
+.cardStacked:hover {
+  transform: translate(-6px, -8px);
+  box-shadow:
+    6px 8px 0 #1a1a2e,
+    7px 9px 0 rgba(255, 255, 255, 0.6),
+    12px 16px 0 #1a1a2e,
+    13px 17px 0 rgba(255, 255, 255, 0.4) !important;
+}
+
+.cardBadge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #e11d48;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  z-index: 10;
+}
+
+.eyesWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.1;
+}
+
+/* Modal Overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modalContentSpinning {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 580px;
+  z-index: 10;
+}
+
+/* New Reveal Frame for After Spinning */
+.revealFrame {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/card-reveal.jpg');
+  background-size: 100% 100%;
+  padding: 24vh 15vw 20vh 15vw;
+  /* Adjusted to fit the hollow part of the stone frame */
+  z-index: 10;
+}
+
+.revealTitle {
+  position: absolute;
+  top: 13vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-cinzel), serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffdda1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9), 0 0 10px rgba(255, 215, 0, 0.6);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 20;
+  letter-spacing: 2px;
+}
+
+.revealOrnament {
+  color: #c084fc;
+  font-size: 2.2rem;
+  text-shadow: 0 0 15px rgba(192, 132, 252, 0.8);
+  font-weight: normal;
+}
+
+.revealFrame10 {
+  /* max-width removed for fullscreen */
+}
+
+.revealFrame1 {
+  /* max-width removed for fullscreen */
+}
+
+.singlePullGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.singlePullGrid .tenPullCardWrapper {
+  height: 45vh;
+  width: auto;
+  aspect-ratio: 2 / 3;
+}
+
+.tenPullGrid {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: repeat(2, 21vh);
+  gap: 4.5vh 4.5vw;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-content: center;
+  z-index: 5;
+}
+
+.tenPullCardWrapper {
+  position: relative;
+  height: 100%;
+  width: auto;
+  aspect-ratio: 2 / 3;
+  margin: auto;
+}
+
+/* Flip Animation */
+.flipAnimation {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  background-image: url('/images/card_background.png');
+  background-size: cover;
+  background-position: center;
+  animation: fastFlip 0.5s infinite linear;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  border: 4px solid #fff;
+}
+
+@keyframes fastFlip {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+
+/* Revealed Card */
+.revealedCardWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  border: 4px solid #fff;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  animation: revealPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+}
+
+@keyframes revealPop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.goldBorderSSR {
+  border-color: #ffd700;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.8), inset 0 0 15px rgba(255, 215, 0, 0.5);
+  animation: revealPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), pulseGoldBorder 2s infinite alternate 0.5s;
+}
+
+@keyframes pulseGoldBorder {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6), inset 0 0 10px rgba(255, 215, 0, 0.4);
+  }
+
+  100% {
+    box-shadow: 0 0 45px rgba(255, 215, 0, 1), inset 0 0 25px rgba(255, 215, 0, 0.8);
+  }
+}
+
+.revealedImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Rarity Ambient Glows (Behind the card) */
+.ambientSSR {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.6) 0%, rgba(255, 215, 0, 0) 70%);
+  z-index: -1;
+  pointer-events: none;
+  animation: pulseGlow 2s infinite alternate;
+}
+
+.ambientSR {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.6) 0%, rgba(168, 85, 247, 0) 70%);
+  z-index: -1;
+  pointer-events: none;
+  animation: pulseGlow 2s infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* Rarity Holograms (Over the card) */
+.hologramSSR::before,
+.hologramSR::before,
+.shiningCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Gold Sparkling Hologram */
+.hologramSSR::before {
+  background: linear-gradient(125deg,
+      transparent 20%,
+      rgba(255, 215, 0, 0.2) 30%,
+      rgba(255, 255, 255, 0.5) 40%,
+      rgba(255, 215, 0, 0.2) 50%,
+      transparent 60%);
+  background-size: 200% 200%;
+  mix-blend-mode: color-dodge;
+  animation: holoSweep 4s linear infinite;
+}
+
+/* Purple Prismatic Hologram */
+.hologramSR::before {
+  background: linear-gradient(135deg,
+      transparent 0%,
+      rgba(216, 180, 254, 0.1) 15%,
+      rgba(168, 85, 247, 0.5) 30%,
+      rgba(255, 255, 255, 0.7) 40%,
+      rgba(168, 85, 247, 0.5) 50%,
+      rgba(216, 180, 254, 0.1) 65%,
+      transparent 100%);
+  background-size: 300% 300%;
+  mix-blend-mode: hard-light;
+  animation: prismSweep 4s ease-in-out infinite alternate;
+  opacity: 0.8;
+}
+
+@keyframes prismSweep {
+  0% {
+    background-position: 100% 100%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes holoSweep {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* The Shader Stuff */
+.shader {
+  position: relative;
+  overflow: hidden;
+  backface-visibility: hidden;
+  /* Forces GPU */
+}
+
+.shaderLayer {
+  background: black;
+  mix-blend-mode: multiply;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.specular {
+  mix-blend-mode: color-dodge;
+  background-attachment: fixed;
+  opacity: 0.25;
+  /* Reduced even further */
+}
+
+.gradientLegendary {
+  background-image: linear-gradient(0deg,
+      hsl(359, 60%, 40%),
+      hsl(16, 60%, 45%),
+      hsl(33, 60%, 50%),
+      hsl(45, 60%, 55%),
+      hsl(58, 60%, 60%),
+      hsl(58, 60%, 65%),
+      hsl(58, 60%, 70%),
+      hsl(96, 60%, 65%),
+      hsl(146, 60%, 60%),
+      hsl(183, 60%, 55%),
+      hsl(225, 60%, 50%),
+      hsl(265, 60%, 45%),
+      hsl(303, 60%, 40%));
+  opacity: 0.40;
+}
+
+.gradientEpic {
+  background-image: linear-gradient(135deg,
+      hsl(260, 80%, 40%) 0%,
+      hsl(280, 80%, 60%) 30%,
+      hsl(200, 80%, 70%) 50%,
+      hsl(280, 80%, 60%) 70%,
+      hsl(260, 80%, 40%) 100%);
+  opacity: 0.25;
+}
+
+/* Shining Sweep Animation for SSR and SR */
+.shiningCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.1) 45%,
+      rgba(255, 255, 255, 0.8) 50%,
+      rgba(255, 255, 255, 0.1) 55%,
+      transparent 60%);
+  transform: translateY(-100%);
+  animation: shineSweepFast 3s ease-in-out infinite;
+  mix-blend-mode: overlay;
+}
+
+@keyframes shineSweepFast {
+  0% {
+    transform: translateY(-120%);
+  }
+
+  25% {
+    transform: translateY(120%);
+  }
+
+  100% {
+    transform: translateY(120%);
+  }
+}
+
+.claimBtn {
+  position: absolute;
+  bottom: 8vh;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, #dfa938 0%, #ad6d22 40%, #522703 100%);
+  border: 3px solid #ffeba1;
+  border-radius: 8px;
+  color: #fffbdd;
+  font-family: var(--font-cinzel), serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 12px 60px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.9);
+  box-shadow:
+    0 0 25px rgba(255, 180, 0, 0.8),
+    inset 0 0 10px rgba(255, 255, 255, 0.5),
+    inset 0 -5px 15px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  z-index: 20;
+}
+
+.claimBtn:hover {
+  box-shadow:
+    0 0 35px rgba(255, 200, 0, 1),
+    inset 0 0 15px rgba(255, 255, 255, 0.6),
+    inset 0 -5px 15px rgba(0, 0, 0, 0.6);
+  transform: translateX(-50%) scale(1.05);
+}
+
+.claimBtn:active {
+  transform: translateX(-50%) scale(0.95);
+}
+
+/* Add a glowing pseudo element to mimic the bright center glow in the image */
+.claimBtn::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.claimBtn::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 4px;
+  background: rgba(255, 215, 0, 0.8);
+  box-shadow: 0 0 20px 5px rgba(255, 215, 0, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .mainContent {
+    padding: 20px 10px;
+    width: 95%;
+  }
+
+  .bannerImage {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    aspect-ratio: 2/3;
+  }
+
+  .gachaButtons {
+    width: 100%;
+    max-width: 320px;
+    flex-direction: column;
+  }
+
+  .gachaBtn {
+    width: 100%;
+  }
+
+  .rarityTitle {
+    font-size: 1.8rem;
+  }
+
+  /* Reveal Modal Adjustments */
+  .revealFrame {
+    padding: 5vh 5vw 15vh 5vw;
+    background-image: none;
+  }
+
+  .revealTitle {
+    font-size: 1.2rem;
+    top: 15vh;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .revealOrnament {
+    font-size: 1.5rem;
+  }
+
+  .modalContentSpinning {
+    width: 90vw;
+    height: 135vw; /* Maintain 2/3 aspect ratio */
+    max-width: 300px;
+    max-height: 450px;
+  }
+
+  .singlePullGrid .tenPullCardWrapper {
+    width: 65vw;
+    height: auto;
+    max-width: 320px;
+    aspect-ratio: auto;
+  }
+
+  .tenPullGrid {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1.5vh 2vw;
+    width: 100%;
+    padding: 0 10px;
+    margin-top: 5vh;
+  }
+
+  .tenPullCardWrapper {
+    height: auto;
+    width: 100%;
+    aspect-ratio: auto;
+  }
+
+  .revealedImage {
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  .revealedCardWrapper {
+    border: none;
+    border-radius: 0;
+  }
+
+  .claimBtn {
+    bottom: 5vh;
+    padding: 10px 40px;
+    font-size: 1.1rem;
+    width: 80%;
+    max-width: 300px;
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Gacha System API",
+    "version": "1.0.0",
+    "description": "API documentation for the Gacha System."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api",
+      "description": "Local Development Server"
+    }
+  ],
+  "paths": {
+    "/users/search": {
+      "get": {
+        "summary": "Search users",
+        "description": "Search users by username or email for trading.",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/trades": {
+      "post": {
+        "summary": "Create a new trade",
+        "description": "Propose a trade with another user.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "receiverId": {
+                    "type": "string"
+                  },
+                  "offeredItems": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "requestedItems": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Trade created"
+          }
+        }
+      }
+    },
+    "/trades/{id}/respond": {
+      "post": {
+        "summary": "Respond to a trade",
+        "description": "Accept or reject an incoming trade request.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "action": {
+                    "type": "string",
+                    "enum": ["accept", "reject"]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Trade updated"
+          }
+        }
+      }
+    },
+    "/trades/incoming": {
+      "get": {
+        "summary": "Get incoming trades",
+        "description": "Retrieve a list of incoming trade requests for the logged in user.",
+        "responses": {
+          "200": {
+            "description": "List of incoming trades"
+          }
+        }
+      }
+    },
+    "/trades/incoming/stream": {
+      "get": {
+        "summary": "Stream incoming trades (SSE)",
+        "description": "Server-sent events stream for real-time trade notifications.",
+        "responses": {
+          "200": {
+            "description": "SSE stream connected"
+          }
+        }
+      }
+    },
+    "/profile/topups": {
+      "get": {
+        "summary": "Get user top-up history",
+        "description": "Retrieve the top-up history for the logged in user.",
+        "responses": {
+          "200": {
+            "description": "List of top-up transactions"
+          }
+        }
+      }
+    },
+    "/profile/gacha-history": {
+      "get": {
+        "summary": "Get user gacha pull history",
+        "description": "Retrieve the gacha pull history (with pagination) for the logged in user.",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of pulls"
+          }
+        }
+      }
+    },
+    "/admin/dashboard": {
+      "get": {
+        "summary": "Get admin dashboard statistics",
+        "description": "Retrieve overall statistics for the admin dashboard.",
+        "responses": {
+          "200": {
+            "description": "Dashboard statistics data"
+          }
+        }
+      }
+    },
+    "/admin/history/pulls": {
+      "get": {
+        "summary": "Get global pull history",
+        "description": "Retrieve all gacha pulls across the system for admin.",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paginated list of global pulls"
+          }
+        }
+      }
+    },
+    "/admin/history/topups": {
+      "get": {
+        "summary": "Get global top-up history",
+        "description": "Retrieve all top-up transactions across the system for admin.",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paginated list of global top-ups"
+          }
+        }
+      }
+    }
+  }
+}
