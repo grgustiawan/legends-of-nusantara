@@ -85,7 +85,6 @@
   vertical-align: middle;
 }
 
-/* Sections */
 .raritySection {
   width: 100%;
   display: flex;
@@ -124,7 +123,6 @@
   text-shadow: 0 0 10px rgba(234, 179, 8, 0.5);
 }
 
-/* Grids */
 .gridS {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -170,7 +168,6 @@
   }
 }
 
-/* Card */
 .card {
   background: #1a1a2e;
   border-radius: 8px;
@@ -256,7 +253,6 @@
   color: white;
 }
 
-/* Stacking */
 .cardStacked {
   box-shadow:
     4px 4px 0 #1a1a2e,
@@ -301,7 +297,6 @@
   opacity: 0.1;
 }
 
-/* Modal Overlay */
 .modalOverlay {
   position: fixed;
   top: 0;
@@ -327,7 +322,6 @@
   z-index: 10;
 }
 
-/* New Reveal Frame for After Spinning */
 .revealFrame {
   position: relative;
   display: flex;
@@ -339,7 +333,6 @@
   background-image: url('/card-reveal.jpg');
   background-size: 100% 100%;
   padding: 24vh 15vw 20vh 15vw;
-  /* Adjusted to fit the hollow part of the stone frame */
   z-index: 10;
 }
 
@@ -367,13 +360,9 @@
   font-weight: normal;
 }
 
-.revealFrame10 {
-  /* max-width removed for fullscreen */
-}
+.revealFrame10 {}
 
-.revealFrame1 {
-  /* max-width removed for fullscreen */
-}
+.revealFrame1 {}
 
 .singlePullGrid {
   display: flex;
@@ -410,7 +399,6 @@
   margin: auto;
 }
 
-/* Flip Animation */
 .flipAnimation {
   width: 100%;
   height: 100%;
@@ -433,7 +421,6 @@
   }
 }
 
-/* Revealed Card */
 .revealedCardWrapper {
   position: relative;
   width: 100%;
@@ -479,7 +466,6 @@
   object-fit: cover;
 }
 
-/* Rarity Ambient Glows (Behind the card) */
 .ambientSSR {
   position: absolute;
   top: 50%;
@@ -518,7 +504,6 @@
   }
 }
 
-/* Rarity Holograms (Over the card) */
 .hologramSSR::before,
 .hologramSR::before,
 .shiningCard::after {
@@ -529,7 +514,6 @@
   z-index: 5;
 }
 
-/* Gold Sparkling Hologram */
 .hologramSSR::before {
   background: linear-gradient(125deg,
       transparent 20%,
@@ -542,7 +526,6 @@
   animation: holoSweep 4s linear infinite;
 }
 
-/* Purple Prismatic Hologram */
 .hologramSR::before {
   background: linear-gradient(135deg,
       transparent 0%,
@@ -578,12 +561,10 @@
   }
 }
 
-/* The Shader Stuff */
 .shader {
   position: relative;
   overflow: hidden;
   backface-visibility: hidden;
-  /* Forces GPU */
 }
 
 .shaderLayer {
@@ -602,7 +583,6 @@
   mix-blend-mode: color-dodge;
   background-attachment: fixed;
   opacity: 0.25;
-  /* Reduced even further */
 }
 
 .gradientLegendary {
@@ -633,7 +613,6 @@
   opacity: 0.25;
 }
 
-/* Shining Sweep Animation for SSR and SR */
 .shiningCard::after {
   content: "";
   position: absolute;
@@ -706,7 +685,6 @@
   transform: translateX(-50%) scale(0.95);
 }
 
-/* Add a glowing pseudo element to mimic the bright center glow in the image */
 .claimBtn::before {
   content: "";
   position: absolute;
@@ -737,7 +715,6 @@
   opacity: 0.7;
 }
 
-/* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
   .mainContent {
     padding: 20px 10px;
@@ -765,7 +742,6 @@
     font-size: 1.8rem;
   }
 
-  /* Reveal Modal Adjustments */
   .revealFrame {
     padding: 5vh 5vw 15vh 5vw;
     background-image: none;
@@ -785,7 +761,7 @@
 
   .modalContentSpinning {
     width: 90vw;
-    height: 135vw; /* Maintain 2/3 aspect ratio */
+    height: 135vw;
     max-width: 300px;
     max-height: 450px;
   }

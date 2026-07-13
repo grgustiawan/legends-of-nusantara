@@ -29,7 +29,6 @@
   font-family: "Upakarti Serong", serif;
   font-size: 2.5rem;
   color: #fde047;
-  /* Gold */
   display: flex;
   align-items: center;
   gap: 15px;
@@ -60,14 +59,12 @@
   width: 20px;
   height: 20px;
   background-color: #f43f5e;
-  /* Red gem placeholder */
   border-radius: 4px;
   transform: rotate(45deg);
 }
 
 .currencyIcon.gold {
   background-color: #fbbf24;
-  /* Gold coin placeholder */
   border-radius: 50%;
   transform: none;
 }
@@ -127,7 +124,6 @@
   background: linear-gradient(to right, transparent, #fde047, transparent);
 }
 
-/* CAROUSEL */
 .carouselContainer {
   position: relative;
   z-index: 10;
@@ -155,8 +151,6 @@
   left: 50%;
   display: flex;
   flex-direction: column;
-  /* Removing overflow: hidden and bg for 3D preserve */
-  /* The layout transitions */
   transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
     width 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
     height 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
@@ -238,7 +232,6 @@
   letter-spacing: 2px;
 }
 
-/* Specific colors for rarity frames if needed */
 .cardItem[data-rarity="SSR"].active .cardFront {
   border-color: #f59e0b;
 }
@@ -251,7 +244,6 @@
   border-color: #3b82f6;
 }
 
-/* 3D FLIPPING STYLES */
 .flipWrapper {
   width: 100%;
   height: 100%;
@@ -335,12 +327,10 @@
   right: 20px;
 }
 
-/* The Shader Stuff */
 .shader {
   position: relative;
   overflow: hidden;
   backface-visibility: hidden;
-  /* Forces GPU */
 }
 
 .shaderLayer {
@@ -359,7 +349,6 @@
   mix-blend-mode: color-dodge;
   background-attachment: fixed;
   opacity: 0.25;
-  /* Reduced even further */
 }
 
 .gradientLegendary {
@@ -425,7 +414,6 @@
   }
 }
 
-/* Offset-based positioning for desktop */
 .cardItem[data-offset="0"] {
   transform: translate(-50%, -50%);
   width: 440px;
@@ -482,7 +470,6 @@
   z-index: 0;
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
   .topBar {
     padding: 15px 20px;
@@ -508,7 +495,6 @@
     flex-shrink: 0;
   }
 
-  /* Adjust navigation buttons */
   .navBtn {
     width: 40px;
     height: 40px;
@@ -523,7 +509,6 @@
     right: 10px;
   }
 
-  /* Scale down cards for mobile */
   .cardItem[data-offset="0"] {
     width: 280px;
     height: 440px;

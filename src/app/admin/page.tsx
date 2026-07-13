@@ -31,10 +31,10 @@ export default function AdminPage() {
   }
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '1.8fr 1fr', gap: '30px', paddingBottom: '40px' }}>
+    <div className="admin-dashboard-grid" style={{ display: 'grid', gridTemplateColumns: '1.8fr 1fr', gap: '30px', paddingBottom: '40px' }}>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
-        <div style={{
+        <div className="admin-dashboard-banner" style={{
           position: 'relative',
           height: '320px',
           borderRadius: '30px',
@@ -70,7 +70,7 @@ export default function AdminPage() {
             <h2 style={{ fontSize: '1.4rem', color: '#f8fafc', fontWeight: 600 }}>Pulls Terbaru</h2>
           </div>
 
-          <div style={{ display: 'flex', gap: '20px' }}>
+          <div className="admin-dashboard-pulls" style={{ display: 'flex', gap: '20px' }}>
             {data?.recentPulls?.filter((p: any) => p.rarity !== 'common').slice(0, 2).map((pull: any, i: number) => (
               <div key={i} style={{ flex: 1, height: '420px', borderRadius: '25px', background: `linear-gradient(to top, rgba(0,0,0,0.9), transparent), url("${pull.imageUrl}") center/cover`, padding: '25px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', position: 'relative', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.3)' }}>
                 <div style={{ position: 'absolute', top: '20px', left: '20px', width: '40px', height: '40px', borderRadius: '50%', background: '#ef4444', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>▶</div>
@@ -151,7 +151,7 @@ export default function AdminPage() {
             </div>
           </div>
 
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 'auto', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '20px' }}>
+          <div className="admin-stats-container" style={{ display: 'flex', justifyContent: 'space-between', marginTop: 'auto', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '20px' }}>
             <div style={{ textAlign: 'center' }}>
               <div style={{ width: '50px', height: '50px', borderRadius: '50%', border: '1px solid #ef4444', margin: '0 auto 10px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ef4444' }}>
                 <Gem />

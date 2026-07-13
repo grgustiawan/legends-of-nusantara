@@ -133,7 +133,7 @@ export default function HistoryPage() {
       </div>
 
       <div style={{ padding: '30px', background: '#120a09', borderRadius: '30px', border: '1px solid rgba(255,255,255,0.05)', boxShadow: '0 10px 25px rgba(0,0,0,0.3)' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px', flexWrap: 'wrap', gap: '15px' }}>
+        <div className="admin-page-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px', flexWrap: 'wrap', gap: '15px' }}>
           <h2 style={{ color: '#f8fafc', fontSize: '1.4rem' }}>
             {activeTab === 'pulls' ? 'Global Pull History' : 'All Top Up Transactions'}
           </h2>
@@ -167,7 +167,7 @@ export default function HistoryPage() {
           </div>
         </div>
 
-        <div style={{ overflowX: 'auto' }}>
+        <div className="admin-table-container" style={{ overflowX: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.95rem' }}>
             <thead>
               {activeTab === 'pulls' ? (

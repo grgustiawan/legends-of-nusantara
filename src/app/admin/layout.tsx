@@ -3,6 +3,7 @@ import { logout } from '@/app/actions/auth';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
+import './adminMobile.css';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -23,7 +24,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   };
 
   return (
-    <div style={{
+    <div className="admin-layout-root" style={{
       display: 'flex',
       minHeight: '100vh',
       backgroundColor: '#1c100e',
@@ -35,7 +36,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       fontFamily: 'var(--font-inter), sans-serif'
     }}>
 
-      <div style={{
+      <div className="admin-sidebar" style={{
         width: '80px',
         margin: '20px',
         borderRadius: '40px',
@@ -47,13 +48,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
         border: '1px solid rgba(255,255,255,0.05)'
       }}>
-        <div style={{ marginBottom: '40px' }}>
+        <div className="admin-sidebar-logo" style={{ marginBottom: '40px' }}>
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f8fafc" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
           </svg>
         </div>
 
-        <nav style={{ display: 'flex', flexDirection: 'column', gap: '30px', flex: 1 }}>
+        <nav className="admin-sidebar-nav" style={{ display: 'flex', flexDirection: 'column', gap: '30px', flex: 1 }}>
           <Link href="/admin" title="Dashboard">
             <div style={{ width: '45px', height: '45px', borderRadius: '50%', background: isActive('/admin') ? '#d83a3a' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s', cursor: 'pointer', boxShadow: isActive('/admin') ? '0 0 15px rgba(216, 58, 58, 0.5)' : 'none' }}>
               <svg width="22" height="22" viewBox="0 0 24 24" fill={isActive('/admin') ? '#fff' : 'none'} stroke={isActive('/admin') ? 'none' : '#94a3b8'} strokeWidth="2">
@@ -84,7 +85,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </Link>
         </nav>
 
-        <div style={{ marginTop: 'auto' }}>
+        <div className="admin-sidebar-logout" style={{ marginTop: 'auto' }}>
           <form action={logout}>
             <button type="submit" title="Logout" style={{ width: '45px', height: '45px', borderRadius: '50%', background: '#261513', border: '1px solid rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#f87171' }}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -95,8 +96,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         </div>
       </div>
 
-      <div style={{ flex: 1, padding: '20px 10px', display: 'flex', flexDirection: 'column', height: '100vh', overflowY: 'auto' }}>
-        <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px', padding: '10px 20px' }}>
+      <div className="admin-main-content" style={{ flex: 1, padding: '20px 10px', display: 'flex', flexDirection: 'column', height: '100vh', overflowY: 'auto' }}>
+        <header className="admin-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px', padding: '10px 20px' }}>
           <div style={{ fontSize: '1.4rem', fontWeight: 600, color: '#f8fafc', letterSpacing: '0.5px' }}>
             <span style={{ color: '#d83a3a' }}>Welcome,</span> ADMIN
           </div>

@@ -36,13 +36,14 @@ export default function AdminEventsClient({ events }: { events: any[] }) {
       <h1 style={{ marginBottom: '30px', color: '#f8fafc' }}>Event Management</h1>
 
       <div style={{ padding: '30px', background: '#120a09', borderRadius: '30px', border: '1px solid rgba(255,255,255,0.05)', marginBottom: '30px', boxShadow: '0 10px 25px rgba(0,0,0,0.3)' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px' }}>
+        <div className="admin-page-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px' }}>
           <h2 style={{ color: '#f8fafc', fontSize: '1.4rem', margin: 0 }}>All Events</h2>
           <button onClick={() => { setSelectedEvent(null); setIsFormOpen(true); }} style={{ background: '#d83a3a', color: 'white', border: 'none', padding: '12px 24px', borderRadius: '12px', fontWeight: 'bold', cursor: 'pointer' }}>
             + Create New Event Banner
           </button>
         </div>
 
+        <div className="admin-table-container">
         <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
           <thead>
             <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.05)', color: '#cbd5e1' }}>
@@ -84,6 +85,7 @@ export default function AdminEventsClient({ events }: { events: any[] }) {
             )}
           </tbody>
         </table>
+        </div>
       </div>
 
       <EventForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} event={selectedEvent} />
