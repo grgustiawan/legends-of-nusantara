@@ -31,6 +31,8 @@ Dibangun pakai Next.js, Prisma, PostgreSQL, dan MinIO buat object storage.
 
 ## Dokumentasi API
 
+Dokumentasi API interaktif menggunakan Swagger bisa diakses pada endpoint `/api-docs`.
+
 Sebagian besar operasi tulis (mutation) pakai Server Actions bawaan Next.js. Tapi ada juga beberapa API Routes standar di `/api/...` untuk kebutuhan tertentu seperti trading, SSE, dan histori. Semua endpoint di bawah butuh cookie auth.
 
 ```http
