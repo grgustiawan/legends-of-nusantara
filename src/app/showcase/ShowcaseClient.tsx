@@ -7,7 +7,7 @@ import BackgroundMusic from '@/components/BackgroundMusic';
 import ElectricBorder from '@/components/ElectricBorder';
 import DarkFogParticles from '@/components/DarkFogParticles';
 
-export default function ShowcaseClient({ cardsData, showcaseBackground }: { cardsData: any[], showcaseBackground?: string | null }) {
+export default function ShowcaseClient({ cardsData, showcaseBackground, cardBackground }: { cardsData: any[], showcaseBackground?: string | null, cardBackground?: string | null }) {
   const [filter, setFilter] = useState('All');
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -187,7 +187,7 @@ export default function ShowcaseClient({ cardsData, showcaseBackground }: { card
                         </div>
                       )}
                     </div>
-                    <div className={styles.cardBack}></div>
+                    <div className={styles.cardBack} style={cardBackground ? { backgroundImage: `url(${cardBackground})` } : {}}></div>
                   </div>
                 </div>
               );

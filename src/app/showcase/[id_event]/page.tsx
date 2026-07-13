@@ -19,6 +19,6 @@ export default async function ShowcasePageWrapper({ params }: { params: Promise<
   const items = await getItemsByEvent(id_event);
 
   return (
-    <ShowcaseClient cardsData={items} showcaseBackground={event.showcaseBackground} />
+    <ShowcaseClient cardsData={items} showcaseBackground={event.showcaseBackground} cardBackground={event.cardBackground} />
   );
 }

@@ -17,6 +17,14 @@ const BUCKET_NAME = process.env.MINIO_BUCKET_NAME || 'gacha-items';
 async function seed() {
   console.log('Starting seed...');
 
+  const sqlPath = path.join(process.cwd(), 'prisma', 'execute_pull.sql');
+  if (fs.existsSync(sqlPath)) {
+    console.log('Executing execute_pull.sql...');
+    const sql = fs.readFileSync(sqlPath, 'utf-8');
+    await prisma.$executeRawUnsafe(sql);
+    console.log('Successfully created/updated gacha.execute_pull function.');
+  }
+
   const exists = await minioClient.bucketExists(BUCKET_NAME);
   if (!exists) {
     await minioClient.makeBucket(BUCKET_NAME, 'us-east-1');

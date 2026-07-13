@@ -15,7 +15,10 @@ export default function ItemForm({ isOpen, onClose, eventId, item }: { isOpen: b
     formData.append('eventId', eventId);
 
     try {
-      await saveItem(formData);
+      const result = await saveItem(formData);
+      if (result && result.error) {
+        throw new Error(result.error);
+      }
       setNotification({ message: 'Item saved successfully', type: 'success' });
     } catch (error: any) {
       setNotification({ message: 'Error saving item: ' + error.message, type: 'error' });

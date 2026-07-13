@@ -96,7 +96,8 @@ export async function executeGachaPull(eventId: string, count: number) {
   }
 
   const headersList = await headers();
-  const ip = headersList.get('x-forwarded-for') || '127.0.0.1';
+  const forwardedFor = headersList.get('x-forwarded-for');
+  const ip = forwardedFor ? forwardedFor.split(',')[0].trim() : '127.0.0.1';
   const userAgent = headersList.get('user-agent') || 'Next.js App';
 
   const results = [];

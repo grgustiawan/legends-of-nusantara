@@ -135,59 +135,64 @@ export async function getItemsByEvent(eventId: string, page: number = 1, limit: 
 }
 
 export async function saveItem(formData: FormData) {
-  const role = await getSessionUserRole();
-  if (role !== 'admin' && role !== 'super_admin') {
-    throw new Error('Unauthorized');
+  try {
+    const role = await getSessionUserRole();
+    if (role !== 'admin' && role !== 'super_admin') {
+      return { error: 'Unauthorized' };
+    }
+
+    const id = formData.get('id') as string | null;
+    const eventId = formData.get('eventId') as string;
+    const name = formData.get('name') as string;
+    const description = formData.get('description') as string | null;
+    const rarity = (formData.get('rarity') as any) || 'common';
+    const dropRate = parseFloat(formData.get('dropRate') as string) || 0;
+    const stockStr = formData.get('stock') as string;
+    const stock = stockStr ? parseInt(stockStr) : null;
+    const isActive = formData.get('isActive') === 'true';
+
+    const imageFile = formData.get('image') as File | null;
+    let imageUrl: string | undefined = undefined;
+
+    if (imageFile && imageFile.size > 0) {
+      const arrayBuffer = await imageFile.arrayBuffer();
+      const buffer = Buffer.from(arrayBuffer);
+      const fileName = `${Date.now()}-item-${imageFile.name.replace(/\s+/g, '-')}`;
+      imageUrl = await uploadFileToMinio(fileName, buffer, imageFile.type);
+    }
+
+    if (!id && !imageUrl) {
+      return { error: 'Image is mandatory for new items' };
+    }
+
+    const itemData: any = {
+      eventId,
+      name,
+      description,
+      rarity,
+      dropRate,
+      stock,
+      isActive
+    };
+
+    if (imageUrl) {
+      itemData.imageUrl = imageUrl;
+    }
+
+    if (id) {
+      await prisma.item.update({
+        where: { id },
+        data: itemData
+      });
+    } else {
+      await prisma.item.create({
+        data: itemData
+      });
+    }
+
+    return { success: true };
+  } catch (error: any) {
+    console.error('Error in saveItem:', error);
+    return { error: error.message || 'An unexpected error occurred while saving the item' };
   }
-
-  const id = formData.get('id') as string | null;
-  const eventId = formData.get('eventId') as string;
-  const name = formData.get('name') as string;
-  const description = formData.get('description') as string | null;
-  const rarity = (formData.get('rarity') as any) || 'common';
-  const dropRate = parseFloat(formData.get('dropRate') as string) || 0;
-  const stockStr = formData.get('stock') as string;
-  const stock = stockStr ? parseInt(stockStr) : null;
-  const isActive = formData.get('isActive') === 'true';
-
-  const imageFile = formData.get('image') as File | null;
-  let imageUrl: string | undefined = undefined;
-
-  if (imageFile && imageFile.size > 0) {
-    const arrayBuffer = await imageFile.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
-    const fileName = `${Date.now()}-item-${imageFile.name.replace(/\s+/g, '-')}`;
-    imageUrl = await uploadFileToMinio(fileName, buffer, imageFile.type);
-  }
-
-  if (!id && !imageUrl) {
-    throw new Error('Image is mandatory for new items');
-  }
-
-  const itemData: any = {
-    eventId,
-    name,
-    description,
-    rarity,
-    dropRate,
-    stock,
-    isActive
-  };
-
-  if (imageUrl) {
-    itemData.imageUrl = imageUrl;
-  }
-
-  if (id) {
-    await prisma.item.update({
-      where: { id },
-      data: itemData
-    });
-  } else {
-    await prisma.item.create({
-      data: itemData
-    });
-  }
-
-  return { success: true };
 }
