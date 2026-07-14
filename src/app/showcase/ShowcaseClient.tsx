@@ -1,15 +1,15 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './page.module.css';
 import BackgroundMusic from '@/components/BackgroundMusic';
-import ElectricBorder from '@/components/ElectricBorder';
 import DarkFogParticles from '@/components/DarkFogParticles';
 
 export default function ShowcaseClient({ cardsData, showcaseBackground, cardBackground }: { cardsData: any[], showcaseBackground?: string | null, cardBackground?: string | null }) {
-  const [filter, setFilter] = useState('All');
+  const [filter, setFilter] = useState('SSR');
   const [activeIndex, setActiveIndex] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const filteredCards = filter === 'All'
     ? cardsData
@@ -46,10 +46,102 @@ export default function ShowcaseClient({ cardsData, showcaseBackground, cardBack
     }
   };
 
+  const activeCard = filteredCards[activeIndex];
+
+  const videoFileNames = [
+    "01_Hayam_Wuruk.mp4",
+    "02_Gajah_Mada.mp4",
+    "03_Ken_Arok.mp4",
+    "04_Nyi_Roro_Kidul.mp4",
+    "05_Prabu_Siliwangi.mp4",
+    "06_Garuda.mp4",
+    "07_Rahwana.mp4",
+    "08_Calon_Arang.mp4",
+    "09_Gatotkaca.mp4",
+    "10_Hanoman.mp4",
+    "11_Dewi_Sri.mp4",
+    "12_Barong.mp4",
+    "13_Airlangga.mp4",
+    "14_Raden_Wijaya.mp4",
+    "15_Keris_Empu_Gandring.mp4",
+    "16_Gayatri_Rajapatni.mp4",
+    "17_Tribhuwana_Wijayatunggadewi.mp4",
+    "18_Dyah_Pitaloka_Citraresmi.mp4",
+    "19_Adityawarman.mp4",
+    "20_Ken_Dedes.mp4",
+    "21_Anusapati.mp4",
+    "22_Kertanegara,mp4",
+    "23_Balaputradewa.mp4",
+    "24_Dapunta_Hyang_Sri_Jayanasa.mp4",
+    "25_Sangkuriang.mp4",
+    "26_Dayang_Sumbi.mp4",
+    "28_Bandung_Bondowoso.mp4",
+    "31_Menak_Jinggo.mp4",
+    "35_Arjuna.mp4",
+    "37_Srikandi.mp4",
+    "39_Putri_Ikan_Danau_Toba.mp4",
+    "40_Sugriwa.mp4",
+    "01_Cakra_Surya_Majapahit.mp4",
+    "02_Keris_Kyai_Setan_Kober.mp4",
+    "03_Keris_Nagasasra.mp4",
+    "04_Kitab_Negarakertagama.mp4",
+    "05_Mahkota_Ratu_Majapahit.mp4",
+  ];
+
+  const getVideoPath = (card: any) => {
+    if (!card) return null;
+    const formattedTitle = card.title.replace(/\s+/g, '_');
+    const matchedFile = videoFileNames.find(f => f.includes(formattedTitle));
+    return matchedFile ? `/videos/${matchedFile}` : null;
+  };
+
+  useEffect(() => {
+    if (activeCard) {
+      const newSrc = getVideoPath(activeCard);
+      if (newSrc && videoRef.current && videoRef.current.getAttribute('src') !== newSrc) {
+        videoRef.current.src = newSrc;
+        videoRef.current.load();
+
+        const playPromise = videoRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(e => {
+            if (e.name !== 'AbortError') {
+              console.error("Autoplay prevented:", e);
+            }
+          });
+        }
+      }
+    }
+  }, [activeIndex, activeCard]);
+
   return (
-    <div className={styles.showcaseWrapper} style={{ backgroundImage: `url(${showcaseBackground || '/gacha-screen.jpeg'})` }}>
+    <div className={styles.showcaseWrapper} style={{ backgroundImage: `url(${showcaseBackground || '/inventory.png'})` }}>
+
+      {/* Background Video or Fallback Image */}
+      <div className={styles.videoBackground}>
+        {getVideoPath(activeCard) ? (
+          <video
+            ref={videoRef}
+            className={styles.fullscreenVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        ) : (
+          <div className={styles.fallbackImageContainer}>
+            <img
+              src={activeCard?.imagePath}
+              alt={activeCard?.title}
+              className={styles.fallbackImage}
+            />
+          </div>
+        )}
+        <div className={styles.videoOverlay}></div>
+      </div>
+
       <DarkFogParticles />
-      <BackgroundMusic src="/sounds/background-music-2.mp3" volume={1} />
+      <BackgroundMusic src="/sounds/main-screen.mp3" volume={1} />
 
       <div className={styles.topBar}>
         <div className={styles.headerTitle}>
@@ -81,7 +173,17 @@ export default function ShowcaseClient({ cardsData, showcaseBackground, cardBack
         ))}
       </div>
 
-      <div style={{ position: 'relative', flex: 1, display: 'flex', width: '100%', overflow: 'hidden' }}>
+      {/* Character Info */}
+      {activeCard && (
+        <div className={styles.characterInfoFloating}>
+          <h1 className={styles.characterName}>{activeCard.title}</h1>
+          <p className={styles.characterRarity}>{activeCard.rarity} - {activeCard.category}</p>
+          {activeCard.lore && <p className={styles.characterLore}>{activeCard.lore}</p>}
+        </div>
+      )}
+
+      {/* Carousel at the bottom */}
+      <div className={styles.carouselSection}>
         <button
           className={`${styles.navBtn} ${styles.prevBtn}`}
           onClick={() => scrollCarousel('left')}
@@ -132,14 +234,6 @@ export default function ShowcaseClient({ cardsData, showcaseBackground, cardBack
                       <span>Rarity</span>
                       <span className={styles.stars}>{getStars(card.rarity)}</span>
                     </div>
-                    <div className={styles.statRow}>
-                      <span>Kategori</span>
-                      <span className={styles.statValue}>{card.category}</span>
-                    </div>
-                    <div className={styles.statRow}>
-                      <span>Status</span>
-                      <span className={styles.statValue}>1 / 1</span>
-                    </div>
                   </div>
                 </>
               );
@@ -162,30 +256,27 @@ export default function ShowcaseClient({ cardsData, showcaseBackground, cardBack
                 >
                   <div className={styles.flipWrapper} style={{ animationDelay: `${index * 0.4}s` }}>
                     <div className={styles.cardFront}>
-                      {borderColor ? (
-                        <ElectricBorder
-                          color={borderColor}
-                          speed={1}
-                          chaos={0.12}
-                          thickness={3}
-                          borderRadius={12}
-                          style={{ width: '100%', height: '100%', transition: 'all 0.5s ease' }}
-                        >
-                          <div className={card.rarity === 'SSR' || card.rarity === 'SR' ? `${styles.shader} ${styles.shiningCard}` : ''} style={{ width: '100%', height: '100%', backgroundColor: '#11151c', borderRadius: 12, overflow: 'hidden', position: 'relative', display: 'flex', flexDirection: 'column' }}>
-                            {innerContent}
-                            {(card.rarity === 'SSR' || card.rarity === 'SR') && (
-                              <div className={`${styles.shaderLayer} ${styles.specular} ${card.rarity === 'SSR' ? styles.gradientLegendary : styles.gradientEpic}`}></div>
-                            )}
-                          </div>
-                        </ElectricBorder>
-                      ) : (
-                        <div className={card.rarity === 'SSR' || card.rarity === 'SR' ? `${styles.shader} ${styles.shiningCard}` : ''} style={{ width: '100%', height: '100%', backgroundColor: '#11151c', borderRadius: 12, overflow: 'hidden', position: 'relative', border: '2px solid #5a5a4a', display: 'flex', flexDirection: 'column', boxShadow: offset === 0 ? '0 15px 40px rgba(0,0,0,0.9), 0 0 20px rgba(253, 224, 71, 0.4)' : '0 10px 30px rgba(0,0,0,0.8)', transition: 'all 0.5s ease' }}>
-                          {innerContent}
-                          {(card.rarity === 'SSR' || card.rarity === 'SR') && (
-                            <div className={`${styles.shaderLayer} ${styles.specular} ${card.rarity === 'SSR' ? styles.gradientLegendary : styles.gradientEpic}`}></div>
-                          )}
-                        </div>
-                      )}
+                      <div
+                        className={card.rarity === 'SSR' || card.rarity === 'SR' ? `${styles.shader} ${styles.shiningCard}` : ''}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          backgroundColor: '#11151c',
+                          borderRadius: 12,
+                          overflow: 'hidden',
+                          position: 'relative',
+                          border: borderColor ? `2px solid ${borderColor}` : '2px solid #5a5a4a',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          boxShadow: offset === 0 ? (borderColor ? `0 15px 40px rgba(0,0,0,0.9), 0 0 20px ${borderColor}66` : '0 15px 40px rgba(0,0,0,0.9), 0 0 20px rgba(253, 224, 71, 0.4)') : '0 10px 30px rgba(0,0,0,0.8)',
+                          transition: 'all 0.5s ease'
+                        }}
+                      >
+                        {innerContent}
+                        {(card.rarity === 'SSR' || card.rarity === 'SR') && (
+                          <div className={`${styles.shaderLayer} ${styles.specular} ${card.rarity === 'SSR' ? styles.gradientLegendary : styles.gradientEpic}`}></div>
+                        )}
+                      </div>
                     </div>
                     <div className={styles.cardBack} style={cardBackground ? { backgroundImage: `url(${cardBackground})` } : {}}></div>
                   </div>

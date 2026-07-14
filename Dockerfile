@@ -1,8 +1,9 @@
 # Stage 1: Install dependencies
 FROM oven/bun:1-alpine AS deps
 WORKDIR /app
+RUN apk add --no-cache python3 make g++ nodejs npm
 COPY package.json package-lock.json ./
-RUN bun install
+RUN npm install --no-audit --no-fund --legacy-peer-deps
 
 # Stage 2: Build the application
 FROM oven/bun:1-alpine AS builder

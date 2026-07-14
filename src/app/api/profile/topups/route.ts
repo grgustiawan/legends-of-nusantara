@@ -37,6 +37,7 @@ export async function GET(request: NextRequest) {
       amount: tx.amount.toString(),
       balanceBefore: tx.balanceBefore.toString(),
       balanceAfter: tx.balanceAfter.toString(),
+      sequence: tx.sequence.toString(),
     }));
 
     return NextResponse.json({ data: formatted, totalPages });
